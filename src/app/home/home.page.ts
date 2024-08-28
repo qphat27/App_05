@@ -1,4 +1,6 @@
+import { state } from '@angular/animations';
 import { Component } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +9,7 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(private detail: NavController) {}
 
   items=[
     {
@@ -39,5 +41,7 @@ export class HomePage {
       imageURL:'https://www.neoshop.co.th/wp-content/uploads/2024/02/w800-7.webp',
     },
   ]
-
+  gotoDetail(item:any){
+    this.detail.navigateForward('/detail',{state:{item}})
+  }
 }

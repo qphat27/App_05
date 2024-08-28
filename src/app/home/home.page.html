@@ -1,10 +1,10 @@
 <ion-content color="primary">
   <ion-grid>
     <ion-col size="12" size-md="6" size-lg="4" *ngFor="let item of items">
-      <ion-card>
+      <ion-card (click)="gotoDetail(item)">
         <img [src]="item.imageURL" alt="">
         <ion-card-header>
-          <ion-card-title>
+          <ion-card-title >
             {{ item.name }}
           </ion-card-title>
         </ion-card-header>
